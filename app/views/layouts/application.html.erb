@@ -9,6 +9,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/nav_top' %>
+    <div id="content">
+    <div class="nav_left"><%= render 'layouts/nav_left' %></div>
+      <%= yield %>
+    </div>
   </body>
 </html>
