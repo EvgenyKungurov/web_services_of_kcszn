@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use postgresl as the database for Active Record
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -17,9 +17,17 @@ gem 'coffee-rails', '~> 4.2'
 # Roo implements read access for all common spreadsheet types
 gem 'roo', '~> 2.4.0'
 gem 'roo-xls'
+# Devise is a flexible authentication solution for Rails based on Warden
+gem 'devise'
+# Very simple Roles library
+gem 'rolify'
 # Axlsx: Office Open XML Spreadsheet Generation
 gem 'axlsx'
 gem 'acts_as_xlsx'
+# work with zip arthives
+gem 'zip'
+# bootstrap css framework
+gem 'bootstrap-sass'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -37,6 +45,10 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 3.5'
+  gem 'rails-controller-testing'
+  gem 'capybara'
+  gem 'factory_girl_rails'
 end
 
 group :development do
