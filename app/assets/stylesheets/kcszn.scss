@@ -1,0 +1,23 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.content {
+  width: 100%;
+}
+.header {
+  background-color: #5cb85c;
+}
+
+.navbar-brand {
+  margin: 10 0 0 10;
+  color: #fff !important;
+  font-size: 2rem;
+  &:hover {
+    color: yellow !important;
+  }
+}
+
+.nav_left {
+  width: 15%;
+  float: left;
+}

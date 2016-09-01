@@ -1,0 +1,2 @@
+class EmploymentCenter < ApplicationRecord
+end

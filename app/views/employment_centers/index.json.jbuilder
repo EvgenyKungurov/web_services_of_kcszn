@@ -1,0 +1,1 @@
+json.array! @employment_centers, partial: 'employment_centers/employment_center', as: :employment_center

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :eployment_ceters
+  resources :employment_centers
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }

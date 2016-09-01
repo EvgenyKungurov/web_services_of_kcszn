@@ -1,0 +1,1 @@
+json.partial! "employment_centers/employment_center", employment_center: @employment_center
