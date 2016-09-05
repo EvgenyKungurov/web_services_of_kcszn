@@ -24,11 +24,11 @@ RSpec.describe EmploymentCentersController, type: :controller do
   # EmploymentCenter. As you add validations to EmploymentCenter, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    skip('Add a hash of attributes valid for your model')
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    skip('Add a hash of attributes invalid for your model')
   }
 
   # This should return the minimal set of values that should be in the session
@@ -36,120 +36,120 @@ RSpec.describe EmploymentCentersController, type: :controller do
   # EmploymentCentersController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
-  describe "GET #index" do
-    it "assigns all employment_centers as @employment_centers" do
+  describe 'GET #index' do
+    it 'assigns all employment_centers as @employment_centers' do
       employment_center = EmploymentCenter.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(assigns(:employment_centers)).to eq([employment_center])
     end
   end
 
-  describe "GET #show" do
-    it "assigns the requested employment_center as @employment_center" do
+  describe 'GET #show' do
+    it 'assigns the requested employment_center as @employment_center' do
       employment_center = EmploymentCenter.create! valid_attributes
       get :show, params: {id: employment_center.to_param}, session: valid_session
       expect(assigns(:employment_center)).to eq(employment_center)
     end
   end
 
-  describe "GET #new" do
-    it "assigns a new employment_center as @employment_center" do
+  describe 'GET #new' do
+    it 'assigns a new employment_center as @employment_center' do
       get :new, params: {}, session: valid_session
       expect(assigns(:employment_center)).to be_a_new(EmploymentCenter)
     end
   end
 
-  describe "GET #edit" do
-    it "assigns the requested employment_center as @employment_center" do
+  describe 'GET #edit' do
+    it 'assigns the requested employment_center as @employment_center' do
       employment_center = EmploymentCenter.create! valid_attributes
       get :edit, params: {id: employment_center.to_param}, session: valid_session
       expect(assigns(:employment_center)).to eq(employment_center)
     end
   end
 
-  describe "POST #create" do
-    context "with valid params" do
-      it "creates a new EmploymentCenter" do
+  describe 'POST #create' do
+    context 'with valid params' do
+      it 'creates a new EmploymentCenter' do
         expect {
           post :create, params: {employment_center: valid_attributes}, session: valid_session
         }.to change(EmploymentCenter, :count).by(1)
       end
 
-      it "assigns a newly created employment_center as @employment_center" do
+      it 'assigns a newly created employment_center as @employment_center' do
         post :create, params: {employment_center: valid_attributes}, session: valid_session
         expect(assigns(:employment_center)).to be_a(EmploymentCenter)
         expect(assigns(:employment_center)).to be_persisted
       end
 
-      it "redirects to the created employment_center" do
+      it 'redirects to the created employment_center' do
         post :create, params: {employment_center: valid_attributes}, session: valid_session
         expect(response).to redirect_to(EmploymentCenter.last)
       end
     end
 
-    context "with invalid params" do
-      it "assigns a newly created but unsaved employment_center as @employment_center" do
+    context 'with invalid params' do
+      it 'assigns a newly created but unsaved employment_center as @employment_center' do
         post :create, params: {employment_center: invalid_attributes}, session: valid_session
         expect(assigns(:employment_center)).to be_a_new(EmploymentCenter)
       end
 
-      it "re-renders the 'new' template" do
+      it 're-renders the 'new' template' do
         post :create, params: {employment_center: invalid_attributes}, session: valid_session
-        expect(response).to render_template("new")
+        expect(response).to render_template('new')
       end
     end
   end
 
-  describe "PUT #update" do
-    context "with valid params" do
+  describe 'PUT #update' do
+    context 'with valid params' do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        skip('Add a hash of attributes valid for your model')
       }
 
-      it "updates the requested employment_center" do
+      it 'updates the requested employment_center' do
         employment_center = EmploymentCenter.create! valid_attributes
         put :update, params: {id: employment_center.to_param, employment_center: new_attributes}, session: valid_session
         employment_center.reload
-        skip("Add assertions for updated state")
+        skip('Add assertions for updated state')
       end
 
-      it "assigns the requested employment_center as @employment_center" do
+      it 'assigns the requested employment_center as @employment_center' do
         employment_center = EmploymentCenter.create! valid_attributes
         put :update, params: {id: employment_center.to_param, employment_center: valid_attributes}, session: valid_session
         expect(assigns(:employment_center)).to eq(employment_center)
       end
 
-      it "redirects to the employment_center" do
+      it 'redirects to the employment_center' do
         employment_center = EmploymentCenter.create! valid_attributes
         put :update, params: {id: employment_center.to_param, employment_center: valid_attributes}, session: valid_session
         expect(response).to redirect_to(employment_center)
       end
     end
 
-    context "with invalid params" do
-      it "assigns the employment_center as @employment_center" do
+    context 'with invalid params' do
+      it 'assigns the employment_center as @employment_center' do
         employment_center = EmploymentCenter.create! valid_attributes
         put :update, params: {id: employment_center.to_param, employment_center: invalid_attributes}, session: valid_session
         expect(assigns(:employment_center)).to eq(employment_center)
       end
 
-      it "re-renders the 'edit' template" do
+      it 're-renders the 'edit' template' do
         employment_center = EmploymentCenter.create! valid_attributes
         put :update, params: {id: employment_center.to_param, employment_center: invalid_attributes}, session: valid_session
-        expect(response).to render_template("edit")
+        expect(response).to render_template('edit')
       end
     end
   end
 
-  describe "DELETE #destroy" do
-    it "destroys the requested employment_center" do
+  describe 'DELETE #destroy' do
+    it 'destroys the requested employment_center' do
       employment_center = EmploymentCenter.create! valid_attributes
       expect {
         delete :destroy, params: {id: employment_center.to_param}, session: valid_session
       }.to change(EmploymentCenter, :count).by(-1)
     end
 
-    it "redirects to the employment_centers list" do
+    it 'redirects to the employment_centers list' do
       employment_center = EmploymentCenter.create! valid_attributes
       delete :destroy, params: {id: employment_center.to_param}, session: valid_session
       expect(response).to redirect_to(employment_centers_url)
