@@ -4,6 +4,10 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
+  post 'upload', to: 'employment_centers#upload'
+  post 'find', to: 'employment_centers#find'
+  get  'find', to: 'employment_centers#index'
+
   devise_scope :user do
     get 'sign_in', to: 'devise/sessions#new'
     get 'sign_out', to: 'devise/sessions#destroy'

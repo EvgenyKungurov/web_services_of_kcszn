@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+<table class="table">
+  <tr>
+    <th>Файл ответа</th><th>Фамилия</th> <th>Имя</th><th>Отчетсво</th> <th>День Рождения</th><th>Адрес</th>
+  </tr>
+  <% @users.each_pair do |k, v| %>
+    <% v.each_value do |user| %>
+      <tr>
+      <td><%= k.split('_')[1] %></td>
+      <td><%= user['FM'] %></td>
+      <td><%= user['IM'] %></td>
+      <td><%= user['OT'] %></td>
+      <td><%= user['BIR'] %></td>
+      <td><%= user['AD'] %></td>
+      <td><%= button_tag 'Распечатать справку', class: "btn btn-default", onclick: print_spravka(user) %></td>
+      </tr>
+      <td class="collapse" id=<%= user['NUMK'].split('/').first %> >
+        <%= render 'layouts/spravka_bezrab', user: user, date: k.split('_')[1] %>
+      </td>
+    <% end %>
+  <% end %>
+</table>
+<br>
+<br>
+<%= link_to 'Назад', employment_centers_path %>
+

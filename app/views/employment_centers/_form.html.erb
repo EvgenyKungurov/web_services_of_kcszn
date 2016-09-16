@@ -1,17 +1,6 @@
-<%= form_for(employment_center) do |f| %>
-  <% if employment_center.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(employment_center.errors.count, "error") %> prohibited this employment_center from being saved:</h2>
-
-      <ul>
-      <% employment_center.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+<div class="actions">
+  <%= form_tag upload_path, multipart: true do %>
+    <%= file_field_tag 'files[]', multiple: true %>
+    <%= submit_tag 'Загрузить' %>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

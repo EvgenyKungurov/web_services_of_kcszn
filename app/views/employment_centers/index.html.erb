@@ -1,25 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Employment Centers</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @employment_centers.each do |employment_center| %>
-      <tr>
-        <td><%= link_to 'Show', employment_center %></td>
-        <td><%= link_to 'Edit', edit_employment_center_path(employment_center) %></td>
-        <td><%= link_to 'Destroy', employment_center, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<h2 class="header_text">Сделайте поиск нужного человека или загрузите ответ с центра занятости</h2>
+<%= form_tag find_path do %>
+  <div class="input-group">
+    <%= text_field_tag 'employment_centers[user]', nil, placeholder: "Введите ФИО...", class: "form-control" %>  
+    <span class="input-group-btn">
+      <button class="btn btn-default" type="submit">Искать!</button>
+    </span>
+  </div>
+<% end %>    
 
 <br>
-
-<%= link_to 'New Employment Center', new_employment_center_path %>
+<br>
+<%= link_to 'Загрузить файлы', new_employment_center_path %>

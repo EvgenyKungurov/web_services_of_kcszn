@@ -17,6 +17,8 @@ gem 'coffee-rails', '~> 4.2'
 # Roo implements read access for all common spreadsheet types
 gem 'roo', '~> 2.4.0'
 gem 'roo-xls'
+# DBF is a small fast library for reading dBase, xBase, Clipper and FoxPro db
+gem 'dbf'
 # Devise is a flexible authentication solution for Rails based on Warden
 gem 'devise'
 # Very simple Roles library
